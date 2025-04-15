@@ -111,6 +111,9 @@ You might need to create a dummy secret to save the connection.
 Edit `pf_deployment.yml` and:
 - Update the image name using the values from Step 4.
 - Update the model version to match Step 5.
+- Update PRT_CONFIG_OVERRIDE with correct values for your environment.
+
+
 
 
 ---
