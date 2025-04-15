@@ -132,7 +132,7 @@ Replace `<your-endpoint-name>` with the endpoint name used in `pf_endpoint.yml`.
 
 ```
 .
-AI-AGENT-PROMPTFLOW
+AI-AGENT-SERVICE-PROMPTFLOW
 ├── ai-agent-pf-docker
 │   ├── model
 │   ├── __pycache__
