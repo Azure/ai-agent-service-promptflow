@@ -5,7 +5,7 @@ This repository demonstrates how to implement and deploy an AI Agent grounded wi
 
 Azure AI Agent requires an Agent ID and a thread id. The thread id is an optional parameter that can be used to track the conversation context. The Agent ID is configured in the custom connection resource and is not required as input parameter.
 
-If the thread id is not provided, the agent will create a new thread for each conversation. The agent will use the thread id to keep track of the conversation context and will use it to generate responses. The agent will use bing search to find relevant information and will use it to generate responses. 
+If the thread id is not provided, the agent will create a new thread for each conversation. The agent will use the thread id to keep track of the conversation context and will use it to generate responses. The agent will use bing search to find relevant information and will use it to generate responses. The agent will also return citations and annotations for the user topic in the response if bing search provides any urls.
 
 Key components:
 - **Promptflow** orchestrates the AI Agent logic.
