@@ -1,0 +1,9 @@
+POST http://localhost:8080/score
+Content-Type: application/json
+
+
+{
+  "topic": "what is the weather like today in bellevue?",
+  "thread_id": "test_thread1"
+}
+
