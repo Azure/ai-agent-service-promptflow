@@ -62,7 +62,7 @@ You might need to create a dummy secret to save the connection.
 
 ---
 
-## 🌐 Step 3: Create AML Online Endpoint
+## 🌐 Step 3: Create Online Endpoint
 
 1. Navigate to the deployment folder:
    ```bash
@@ -70,7 +70,7 @@ You might need to create a dummy secret to save the connection.
    az configure --defaults workspace=<AI Project Name> group=<ai-project resource group>
    ```
 
-2. Create the Azure ML online endpoint:
+2. Create the online endpoint:
    ```bash
    az ml online-endpoint create -f pf_endpoint.yml
    ```
