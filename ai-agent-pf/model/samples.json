@@ -1,5 +1,4 @@
-[
-  {
-    "topic": "atom"
-  }
-]
+{
+  "topic": "what is the weather like today in bellevue?",
+  "thread_id": "test_thread1"
+}
