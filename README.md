@@ -135,7 +135,7 @@ az ml online-endpoint update --name <your-endpoint-name> --traffic "<deployment 
 
 ## 📥 Sample Response
 
-```json
+```http
 
 //Test the endpoint with a simple request 
 
