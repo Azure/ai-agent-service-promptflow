@@ -398,3 +398,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+test_agent.py
+venv
+test_endpoint_local.http
+Dockerfile

@@ -1,11 +1,9 @@
 $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
-name: blue13
+name: blue19
 endpoint_name: pf-ai-agent-endpoint-1
-model: azureml:ai-agent-pf-model:8
-  # You can also specify model files path inline
-  # path: examples/flows/chat/basic-chat
+model: azureml:ai-agent-pf-model:15
 environment: 
-  image: <your acr>.azurecr.io/1a6851e5-9c10-41bd-a6dd-9303cbab6147/azureml/azureml_f1f89f206f867e8bae844530924ff407
+  image: anildwapremacr.azurecr.io/1a6851e5-9c10-41bd-a6dd-9303cbab6147/azureml/azureml_83b65b167747d855086e2a51e76bec32
   inference_config:
       liveness_route:
         path: /health
@@ -24,4 +22,4 @@ instance_type: Standard_DS1_v2
 instance_count: 1
 app_insights_enabled: true
 environment_variables:
-  PRT_CONFIG_OVERRIDE: deployment.subscription_id=<sub id>,deployment.resource_group=ai-foundry,deployment.workspace_name=<AI Project name>,deployment.endpoint_name=pf-ai-agent-endpoint,deployment.deployment_name=blue13
+  PRT_CONFIG_OVERRIDE: deployment.subscription_id=e4718866-4e88-411f-a0b8-10c8051dc165,deployment.resource_group=ai-foundry,deployment.workspace_name=anildwa-project-westus3,deployment.endpoint_name=pf-ai-agent-endpoint,deployment.deployment_name=blue19

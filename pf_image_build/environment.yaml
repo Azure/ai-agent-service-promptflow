@@ -1,4 +1,4 @@
 $schema: https://azuremlschemas.azureedge.net/latest/environment.schema.json
-name: ai-agent-pf-environment
+name: aiagentserviceenv
 build:
   path: .

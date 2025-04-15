@@ -1,0 +1,66 @@
+
+### Test the endpoint with a simple request 
+
+POST https://pf-ai-agent-endpoint-1.westus3.inference.ml.azure.com/score
+Content-Type: application/json
+Authorization: Bearer <your api key>
+azureml-model-deployment: blue19
+
+{
+  "topic": "what is the weather like today in bellevue?",
+  "thread_id": "test_thread1"
+}
+
+
+HTTP/1.1 200 OK
+server: azureml-frontdoor
+date: Tue, 15 Apr 2025 20:03:32 GMT
+content-type: application/json
+content-length: 320
+access-control-allow-origin: *
+x-request-id: 446e81bc-bc89-4403-869c-80d9d598bb1c
+azureml-model-deployment: blue19
+connection: close
+
+{
+  "result": {
+    "agent_id": "asst_wuuERC4L0LKfqUGZR2jEO2nW",
+    "message": "I encountered an issue retrieving the current weather for Bellevue. Please check a reliable weather website or app for the most up-to-date information on Bellevue's weather.\n",
+    "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK",
+    "url_citation_annotations": []
+  }
+}
+
+
+### Use the thread_id from the previous response to continue the conversation
+
+POST https://pf-ai-agent-endpoint-1.westus3.inference.ml.azure.com/score
+Content-Type: application/json
+Authorization: Bearer <your api key>
+azureml-model-deployment: blue19
+
+{
+  "topic": "what about in seattle?",
+  "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK"
+}
+
+
+
+HTTP/1.1 200 OK
+server: azureml-frontdoor
+date: Tue, 15 Apr 2025 20:04:36 GMT
+content-type: application/json
+content-length: 326
+access-control-allow-origin: *
+x-request-id: c48831cc-e6a7-40ca-aa3c-fdc6939891bb
+azureml-model-deployment: blue19
+connection: close
+
+{
+  "result": {
+    "agent_id": "asst_wuuERC4L0LKfqUGZR2jEO2nW",
+    "message": "I am currently unable to retrieve real-time weather information. I recommend checking a reliable weather website or app for the most up-to-date details on Seattle's weather today.\n",
+    "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK",
+    "url_citation_annotations": []
+  }
+}

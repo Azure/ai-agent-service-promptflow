@@ -1,0 +1,11 @@
+$schema: 
+  https://azuremlschemas.azureedge.net/promptflow/latest/CustomConnection.schema.json
+type: custom
+name: AIProjectConnectionString
+configs:
+  ConnectionString: westus3.api.azureml.ms;e4718866-4e88-411f-a0b8-10c8051dc165;ai-foundry;anildwa-project-westus3
+  AgentID: asst_wuuERC4L0LKfqUGZR2jEO2nW
+secrets:
+  dummy: dummy
+module: promptflow.connections
+

@@ -34,7 +34,7 @@ RUN chmod -R +x /var/runit
 
 ENV AZURE_TENANT_ID=<YOUR AZURE_TENANT_ID> \
 AZURE_CLIENT_ID=<YOUR CLIENT ID> \
-AZURE_CLIENT_SECRET=<YOUR SECRET?
+
 
 COPY ./start.sh /
 CMD ["bash", "./start.sh"]

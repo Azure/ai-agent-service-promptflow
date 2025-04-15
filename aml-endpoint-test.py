@@ -20,7 +20,7 @@ if not api_key:
     raise Exception("A key should be provided to invoke the endpoint")
 
 
-headers = {'Content-Type':'application/json', 'Accept': 'application/json', 'Authorization':('Bearer '+ api_key)}
+headers = {'Content-Type':'application/json', 'Accept': 'application/json', 'Authorization':('Bearer '+ api_key), 'azureml-model-deployment' : 'blue19'}
 
 req = urllib.request.Request(url, body, headers)
 

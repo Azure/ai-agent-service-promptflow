@@ -1,6 +1,6 @@
 $schema: https://azuremlschemas.azureedge.net/latest/model.schema.json
 name: ai-agent-pf-model
-version: 8
+version: 15
 path: ../ai-agent-pf/model
 description: 
   This is a model for the AI Agent using PromptFlow. It is built using the PromptFlow SDK and is designed to be deployed on Azure Machine Learning.

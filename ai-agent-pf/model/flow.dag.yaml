@@ -20,7 +20,7 @@ nodes:
   inputs:
     input: ${inputs.topic}
     thread_id: ${inputs.thread_id}
-    ai_project_connection: AIProjectConnectionString
+    connection: AIProjectConnectionString
   use_variants: false
 node_variants: {}
 environment:

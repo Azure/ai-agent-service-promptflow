@@ -52,7 +52,7 @@ Make sure you have the following tools and resources set up:
 
 ## 🔐 Step 2: Create Custom Connection
 
-Create a **Custom Connection** in the AI Project connected resources panel.
+Create a **Custom Connection** with name AIProjectConnectionString with key-value pairs in the AI Project connected resources panel.
 You might need to create a dummy secret to save the connection.
 
 | Key               | Value                                                                 |
@@ -109,6 +109,7 @@ You might need to create a dummy secret to save the connection.
 ## 🛠 Step 6: Update Deployment Configuration
 
 Edit `pf_deployment.yml` and:
+- Update the deployment name.
 - Update the image name using the values from Step 4.
 - Update the model version to match Step 5.
 - Update PRT_CONFIG_OVERRIDE with correct values for your environment.
@@ -126,48 +127,80 @@ az ml online-deployment create --name blue --endpoint-name <your-endpoint-name> 
 
 Replace `<your-endpoint-name>` with the endpoint name used in `pf_endpoint.yml`.
 
----
+Once the deployment is successful, update the traffic to 100% on the new deployment:
 
-## 💡 Project Folder Structure
-
+```bash
+az ml online-endpoint update --name <your-endpoint-name> --traffic "<deployment name>=100"
 ```
-.
-AI-AGENT-SERVICE-PROMPTFLOW
-├── ai-agent-pf-docker
-│   ├── model
-│   ├── __pycache__
-│   ├── .promptflow
-│   ├── ai-agent-with-bing.py
-│   ├── flow.dag.yaml
-│   ├── flow.meta.yaml
-│   ├── requirements.txt
-│   └── samples.json
-│
-├── aml-endpoint-deployment
-│   ├── aml_env.yml
-│   ├── pf_deployment.yml
-│   ├── pf_deployment_concurrent_requests.yml
-│   ├── pf_endpoint.yml
-│   └── pf_model.yml
-│
-├── pf_image_build
-│   ├── Dockerfile
-│   ├── environment.yml
-│   └── requirements.txt
-│
-├── sample_pf_input.json
-├── aml-endpoint-test.py
-└── README.md
 
-```
----
-
-## 📤 Sample Payload
+## 📥 Sample Response
 
 ```json
+
+//Test the endpoint with a simple request 
+
+POST https://pf-ai-agent-endpoint-1.westus3.inference.ml.azure.com/score
+Content-Type: application/json
+Authorization: Bearer <your api key>
+azureml-model-deployment: blue19
+
 {
-    "topic": "what is the capital of France?",
-    "thread_id": "test_thread1"
+  "topic": "what is the weather like today in bellevue?",
+  "thread_id": "test_thread1"
+}
+
+
+HTTP/1.1 200 OK
+server: azureml-frontdoor
+date: Tue, 15 Apr 2025 20:03:32 GMT
+content-type: application/json
+content-length: 320
+access-control-allow-origin: *
+x-request-id: 446e81bc-bc89-4403-869c-80d9d598bb1c
+azureml-model-deployment: blue19
+connection: close
+
+{
+  "result": {
+    "agent_id": "asst_wuuERC4L0LKfqUGZR2jEO2nW",
+    "message": "I encountered an issue retrieving the current weather for Bellevue. Please check a reliable weather website or app for the most up-to-date information on Bellevue's weather.\n",
+    "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK",
+    "url_citation_annotations": []
+  }
+}
+
+
+// Use the thread_id from the previous response to continue the conversation
+
+POST https://pf-ai-agent-endpoint-1.westus3.inference.ml.azure.com/score
+Content-Type: application/json
+Authorization: Bearer <your api key>
+azureml-model-deployment: blue19
+
+{
+  "topic": "what about in seattle?",
+  "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK"
+}
+
+
+
+HTTP/1.1 200 OK
+server: azureml-frontdoor
+date: Tue, 15 Apr 2025 20:04:36 GMT
+content-type: application/json
+content-length: 326
+access-control-allow-origin: *
+x-request-id: c48831cc-e6a7-40ca-aa3c-fdc6939891bb
+azureml-model-deployment: blue19
+connection: close
+
+{
+  "result": {
+    "agent_id": "asst_wuuERC4L0LKfqUGZR2jEO2nW",
+    "message": "I am currently unable to retrieve real-time weather information. I recommend checking a reliable weather website or app for the most up-to-date details on Seattle's weather today.\n",
+    "thread_id": "thread_f0XRpvNTDLNzSifMtlkeo7rK",
+    "url_citation_annotations": []
+  }
 }
 ```
 
