@@ -171,6 +171,16 @@ AI-AGENT-SERVICE-PROMPTFLOW
 }
 ```
 
+
+## 💰 Azure Resource Cost Overview
+
+
+- **[Azure AI Foundry](https://azure.microsoft.com/en-us/pricing/details/ai-foundry/)**: Check the pricing page for details.
+- **[Azure ML Online Endpoint](https://azure.microsoft.com/en-us/pricing/details/machine-learning/)**: Refer to the Azure ML pricing page for costs associated with online endpoints and deployments.
+- **[Bing Search](https://www.microsoft.com/en-us/bing/apis/pricing)**: Costs may apply based on usage. Refer to the Bing Search pricing page for details.
+- **[Azure Container Registry](https://azure.microsoft.com/en-us/pricing/details/container-registry/)**: Check the Azure Container Registry pricing page for details on storage and data transfer costs.
+
+
 ## 🧼 Cleanup Resources (Optional)
 
 To delete the online endpoint:
