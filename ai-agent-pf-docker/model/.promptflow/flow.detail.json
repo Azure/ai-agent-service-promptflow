@@ -1,0 +1,128 @@
+{
+  "flow_runs": [
+    {
+      "run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805_0",
+      "status": "Completed",
+      "error": null,
+      "inputs": {
+        "nodeName": "test"
+      },
+      "output": {
+        "final_result": "from node1"
+      },
+      "metrics": null,
+      "request": null,
+      "parent_run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805",
+      "root_run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805",
+      "source_run_id": null,
+      "flow_id": "template_standard_flow",
+      "start_time": "2024-11-16T22:43:19.129624Z",
+      "end_time": "2024-11-16T22:43:19.137405Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "flow",
+          "node_name": "flow",
+          "type": "Flow",
+          "start_time": 1731825799.129624,
+          "end_time": 1731825799.137405,
+          "children": [
+            {
+              "name": "call_node1",
+              "type": "Function",
+              "inputs": {
+                "input": "test"
+              },
+              "output": "from node1",
+              "start_time": 1731825799.134953,
+              "end_time": 1731825799.136006,
+              "error": null,
+              "children": [],
+              "node_name": "node1",
+              "parent_id": "",
+              "id": "0662c4f7-e36b-4e45-a150-ab0fb5835972",
+              "function": "call_node1",
+              "system_metrics": {}
+            }
+          ],
+          "system_metrics": {
+            "duration": 0.007781,
+            "prompt_tokens": 0,
+            "completion_tokens": 0,
+            "total_tokens": 0
+          },
+          "inputs": {
+            "nodeName": "test"
+          },
+          "output": {
+            "final_result": "from node1"
+          },
+          "error": null
+        }
+      ],
+      "name": "",
+      "description": "",
+      "tags": null,
+      "system_metrics": {
+        "duration": 0.007781,
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      },
+      "result": {
+        "final_result": "from node1"
+      },
+      "upload_metrics": false,
+      "otel_trace_id": "0x9b4e6b2f38409e0b7557b9be4801b97f",
+      "message_format": "basic"
+    }
+  ],
+  "node_runs": [
+    {
+      "node": "node1",
+      "flow_run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805",
+      "run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805_node1_0",
+      "status": "Completed",
+      "inputs": {
+        "input": "test"
+      },
+      "output": "from node1",
+      "metrics": null,
+      "error": null,
+      "parent_run_id": "52b634e8-0e57-41ad-a2a0-f6ce49030805_0",
+      "start_time": "2024-11-16T22:43:19.134953Z",
+      "end_time": "2024-11-16T22:43:19.136006Z",
+      "index": 0,
+      "api_calls": [
+        {
+          "name": "call_node1",
+          "type": "Function",
+          "inputs": {
+            "input": "test"
+          },
+          "output": "from node1",
+          "start_time": 1731825799.134953,
+          "end_time": 1731825799.136006,
+          "error": null,
+          "children": [],
+          "node_name": "node1",
+          "parent_id": "",
+          "id": "0662c4f7-e36b-4e45-a150-ab0fb5835972",
+          "function": "call_node1",
+          "system_metrics": {}
+        }
+      ],
+      "cached_run_id": null,
+      "cached_flow_run_id": null,
+      "logs": {
+        "stdout": "",
+        "stderr": ""
+      },
+      "system_metrics": {
+        "duration": 0.001053
+      },
+      "result": "from node1",
+      "message_format": "basic"
+    }
+  ]
+}

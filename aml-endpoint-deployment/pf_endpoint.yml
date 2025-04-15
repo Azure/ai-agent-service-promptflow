@@ -1,0 +1,12 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineEndpoint.schema.json
+name: pf-ai-agent-endpoint-1
+auth_mode: key
+properties:
+# this property only works for system-assigned identity.
+# if the deploy user has access to connection secrets, 
+# the endpoint system-assigned identity will be auto-assigned connection secrets reader role as well
+  enforce_access_to_default_secret_stores: enabled
+
+traffic:
+  blue: 0
+  green: 100

@@ -1,0 +1,17 @@
+{
+    "code": {
+        "node1.py": {
+            "type": "python",
+            "inputs": {
+                "input": {
+                    "type": [
+                        "string"
+                    ]
+                }
+            },
+            "source": "node1.py",
+            "function": "call_node1"
+        }
+    },
+    "package": {}
+}

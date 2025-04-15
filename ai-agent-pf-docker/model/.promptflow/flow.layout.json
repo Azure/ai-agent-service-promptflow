@@ -1,0 +1,60 @@
+{
+  "orientation": "Vertical",
+  "nodeLayouts": {
+    "inputs": {
+      "x": 620,
+      "y": 42,
+      "index": -1
+    },
+    "outputs": {
+      "x": 550,
+      "y": 578,
+      "index": -1
+    },
+    "model_node": {
+      "x": 470,
+      "y": 176,
+      "height": 75,
+      "index": 0
+    },
+    "node1": {
+      "x": 140,
+      "y": 310,
+      "height": 75,
+      "index": 1
+    },
+    "node2": {
+      "x": 470,
+      "y": 310,
+      "height": 75,
+      "index": 2
+    },
+    "return_output": {
+      "x": 470,
+      "y": 444,
+      "height": 75,
+      "index": 4
+    },
+    "node3": {
+      "x": 800,
+      "y": 310,
+      "height": 75,
+      "index": 3
+    },
+    "model_node_2": {
+      "x": 366.92688528872696,
+      "y": 479.8274663714469,
+      "index": -1
+    }
+  },
+  "viewport": {
+    "transformMatrix": [
+      0.5743716232946527,
+      0,
+      0,
+      0.5743716232946527,
+      -80.89245947953583,
+      76.33459866026033
+    ]
+  }
+}

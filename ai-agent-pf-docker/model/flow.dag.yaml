@@ -1,0 +1,27 @@
+id: template_standard_flow
+name: Template Standard Flow
+inputs:
+  topic:
+    type: string
+    is_chat_input: false
+  thread_id:
+    type: string
+    is_chat_input: false
+outputs:
+  result:
+    type: string
+    reference: ${run_agent_with_bingsearch.output}
+nodes:
+- name: run_agent_with_bingsearch
+  type: python
+  source:
+    type: code
+    path: ai-agent-with-bing.py
+  inputs:
+    input: ${inputs.topic}
+    thread_id: ${inputs.thread_id}
+    ai_project_connection: AIProjectConnectionString
+  use_variants: false
+node_variants: {}
+environment:
+  python_requirements_txt: requirements.txt

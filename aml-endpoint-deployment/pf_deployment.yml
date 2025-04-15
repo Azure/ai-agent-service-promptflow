@@ -1,0 +1,26 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: blue13
+endpoint_name: pf-ai-agent-endpoint-1
+model: azureml:ai-agent-pf-model:8
+  # You can also specify model files path inline
+  # path: examples/flows/chat/basic-chat
+environment: 
+  image: anildwapremacr.azurecr.io/1a6851e5-9c10-41bd-a6dd-9303cbab6147/azureml/azureml_f1f89f206f867e8bae844530924ff407
+  inference_config:
+      liveness_route:
+        path: /health
+        port: 8080
+      readiness_route:
+        path: /health
+        port: 8080
+      scoring_route:
+        path: /score
+        port: 8080  
+
+request_settings:
+    request_timeout_ms: 30000
+instance_type: Standard_DS1_v2
+instance_count: 1
+app_insights_enabled: true
+environment_variables:
+  PRT_CONFIG_OVERRIDE: deployment.subscription_id=e4718866-4e88-411f-a0b8-10c8051dc165,deployment.resource_group=ai-foundry,deployment.workspace_name=anildwa-project-westus3,deployment.endpoint_name=pf-ai-agent-endpoint,deployment.deployment_name=blue13
