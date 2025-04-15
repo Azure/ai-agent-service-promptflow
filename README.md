@@ -128,7 +128,7 @@ Replace `<your-endpoint-name>` with the endpoint name used in `pf_endpoint.yml`.
 
 ---
 
-## 💡 Example Deployment Folder Structure
+## 💡 Project Folder Structure
 
 ```
 .
